@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background-color: #0a0a12;
+    color: hsl(0 0% 95%);
+    -webkit-font-smoothing: antialiased;
+    font-size: 13px;
+  }
+  #root { min-width: 340px; min-height: 420px; }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: #12121e; }
+  ::-webkit-scrollbar-thumb { background: #2a2a3e; border-radius: 2px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+}

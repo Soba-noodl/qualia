@@ -1,0 +1,33 @@
+name: Auto Crawl
+
+on:
+  workflow_dispatch:
+    inputs:
+      audit_id:
+        description: "Audit ID to crawl and analyze"
+        required: true
+        type: string
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5  # v4.3.1
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020  # v4.4.0
+        with:
+          node-version: "22"
+
+      - name: Install dependencies from lockfile
+        run: npm ci
+
+      - name: Install Chromium
+        run: npx playwright install chromium --with-deps
+
+      - name: Crawl and upload screenshots
+        env:
+          AUDIT_ID: ${{ inputs.audit_id }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: node scripts/auto-crawl.js

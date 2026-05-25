@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark theme as default - Professional SaaS with purple accents */
+    --background: 240 10% 4%;
+    --foreground: 0 0% 95%;
+
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 240 10% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 6% 12%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 240 6% 15%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 262 83% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 6% 18%;
+    --input: 240 6% 12%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.75rem;
+
+    /* Purple glow for special effects */
+    --glow: 262 83% 58%;
+    --glow-muted: 262 40% 20%;
+    
+    /* Surface variants */
+    --surface-1: 240 10% 8%;
+    --surface-2: 240 8% 12%;
+    --surface-3: 240 6% 16%;
+
+    --sidebar-background: 240 10% 5%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 6% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 240 6% 18%;
+    --sidebar-ring: 262 83% 58%;
+
+    /* Auth page light-form panel — intentional split-surface design */
+    --auth-form-bg: 0 0% 100%;
+    --auth-form-text: 222.2 47.4% 11.2%;
+    --auth-form-text-muted: 215.4 16.3% 46.9%;
+    --auth-form-input-bg: 210 40% 96.1%;
+    --auth-form-input-border: 214.3 31.8% 91.4%;
+  }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .glass {
+    background: hsl(240 10% 8% / 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(240 6% 18%);
+  }
+  
+  .glow-purple {
+    box-shadow: 0 0 40px hsl(262 83% 58% / 0.2), 
+                0 0 80px hsl(262 83% 58% / 0.1);
+  }
+  
+  .glow-border {
+    box-shadow: inset 0 0 0 1px hsl(262 83% 58% / 0.3),
+                0 0 20px hsl(262 83% 58% / 0.1);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(262 83% 75%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Highlight pulse animation for issue cards */
+  @keyframes highlight-pulse {
+    0% {
+      box-shadow: 0 0 0 0 hsl(262 83% 58% / 0.7);
+    }
+    50% {
+      box-shadow: 0 0 20px 4px hsl(262 83% 58% / 0.5);
+    }
+    100% {
+      box-shadow: 0 0 0 0 hsl(262 83% 58% / 0);
+    }
+  }
+  
+  .animate-highlight-pulse {
+    animation: highlight-pulse 1.5s ease-out;
+  }
+
+  /* Happy path bridge: continuous breathing ring on the target element */
+  @keyframes bridge-pulse {
+    0%, 100% {
+      box-shadow:
+        0 0 0 2px hsl(262 83% 58% / 0.9),
+        0 0 0 5px hsl(262 83% 58% / 0.35),
+        0 0 18px 4px hsl(262 83% 58% / 0.2);
+    }
+    50% {
+      box-shadow:
+        0 0 0 3px hsl(262 83% 58% / 1),
+        0 0 0 9px hsl(262 83% 58% / 0.2),
+        0 0 28px 8px hsl(262 83% 58% / 0.12);
+    }
+  }
+
+  .tour-bridge-ring {
+    animation: bridge-pulse 2s ease-in-out infinite;
+    position: relative;
+    z-index: 10;
+  }
+
+  /* Card recipes (REWORK-007 phase 1) — three named card patterns. */
+  /* Use these instead of ad-hoc string assembly. See agent_docs/design-system.md §5.1. */
+
+  /* .qa-card-static — equivalent to <Card> defaults from src/components/ui/card.tsx.
+     Use for: static information groups with header + content. */
+  .qa-card-static {
+    @apply rounded-lg border bg-card text-card-foreground shadow-sm;
+  }
+
+  /* .qa-card-interactive — hero card with hover lift.
+     Use for: clickable card-shaped affordances (e.g. project cards on Dashboard). */
+  .qa-card-interactive {
+    @apply glass rounded-xl p-6 transition-all hover:glow-border hover:scale-[1.02] cursor-pointer;
+  }
+
+  /* .qa-card-info — bordered icon + short description card.
+     Use for: static info row with leading icon and label/value (e.g. About page facts). */
+  .qa-card-info {
+    @apply rounded-xl border border-border bg-card p-5 flex items-start gap-4;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Google Drive Picker: force it above everything and ensure it's interactive */
+.picker-dialog-bg {
+  z-index: 10000 !important;
+  pointer-events: auto !important;
+}
+.picker-dialog {
+  z-index: 10001 !important;
+  pointer-events: auto !important;
+}
+/* Auth confirmation panel animations */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes confirmFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-7px); }
+  }
+  @keyframes confirmRipple {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(2.8); opacity: 0; }
+  }
+  @keyframes confirmFadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .cfu-icon { animation: confirmFloat 3.2s ease-in-out infinite; }
+  .cfu-ring-1 { animation: confirmRipple 2.4s ease-out 0s infinite; }
+  .cfu-ring-2 { animation: confirmRipple 2.4s ease-out 0.6s infinite; }
+  .cfu-ring-3 { animation: confirmRipple 2.4s ease-out 1.2s infinite; }
+  .cfu-s1 { animation: confirmFadeUp 0.45s ease both 0.05s; }
+  .cfu-s2 { animation: confirmFadeUp 0.45s ease both 0.15s; }
+  .cfu-s3 { animation: confirmFadeUp 0.45s ease both 0.25s; }
+  .cfu-s4 { animation: confirmFadeUp 0.45s ease both 0.35s; }
+  .cfu-s5 { animation: confirmFadeUp 0.45s ease both 0.45s; }
+}
+
+.picker-dialog iframe {
+  pointer-events: auto !important;
+}
