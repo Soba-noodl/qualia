@@ -1,0 +1,31 @@
+/** Footer */
+export const footer = {
+  en: {
+    footerCopyright: "Qualia by Andrea De Iturbe. All rights reserved.",
+    footerBetaLine: "Your feedback shapes the product.",
+    footerSectionProduct: "Product",
+    footerSectionCompanyLegal: "Company & Legal",
+    footerAbout: "About",
+    changelogNavLabel: "Changelog",
+    footerChangelogNew: "New",
+    footerContact: "Contact",
+    footerPrivacy: "Privacy Policy",
+    footerTerms: "Terms of Use",
+    footerSecurity: "Security",
+    footerCookies: "Cookies",
+  },
+  it: {
+    footerCopyright: "Qualia di Andrea De Iturbe. Tutti i diritti riservati.",
+    footerBetaLine: "Il tuo feedback guida il prodotto.",
+    footerSectionProduct: "Prodotto",
+    footerSectionCompanyLegal: "Azienda e legale",
+    footerAbout: "Chi siamo",
+    changelogNavLabel: "Changelog",
+    footerChangelogNew: "Novita",
+    footerContact: "Contatti",
+    footerPrivacy: "Informativa sulla Privacy",
+    footerTerms: "Termini di utilizzo",
+    footerSecurity: "Sicurezza",
+    footerCookies: "Cookie",
+  },
+} as const;

@@ -1,0 +1,21 @@
+{
+  "name": "Qualia",
+  "id": "1611832512917961586",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "dist/ui.html",
+  "capabilities": [],
+  "permissions": ["filekey"],
+  "enableProposedApi": false,
+  "enablePrivatePluginApi": true,
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page",
+  "networkAccess": {
+    "allowedDomains": ["https://*.supabase.co", "https://qualia-ux.com"]
+  },
+  "menu": [
+    { "name": "Open Qualia", "command": "open" },
+    { "separator": true },
+    { "name": "Settings", "command": "settings" }
+  ]
+}
