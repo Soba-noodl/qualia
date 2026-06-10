@@ -1,0 +1,135 @@
+project_id = "zujbauyrpisjdqmjhmgr"
+
+[functions.send-welcome-email]
+verify_jwt = false
+
+[functions.manage-email-preferences]
+verify_jwt = false
+
+[functions.send-retention-emails]
+verify_jwt = false
+
+[functions.mcp]
+verify_jwt = false
+
+[functions.mcp-auth]
+verify_jwt = false
+
+[functions.mcp-image]
+verify_jwt = false
+
+[functions.reframe-export]
+verify_jwt = false
+
+[functions.log-error]
+verify_jwt = false
+
+[functions.synth-user-analyze]
+verify_jwt = false
+
+[functions.check-contrast]
+verify_jwt = false
+
+[functions.analyze-ui]
+verify_jwt = false
+
+[functions.fetch-figma-snapshot]
+verify_jwt = false
+
+[functions.fetch-figma-flow]
+verify_jwt = false
+
+[functions.explain-reaudit-delta]
+verify_jwt = false
+
+[functions.summarize-context]
+verify_jwt = false
+
+[functions.integration-status]
+verify_jwt = false
+
+[functions.google-drive-fetch]
+verify_jwt = false
+
+[functions.notion-fetch]
+verify_jwt = false
+
+[functions.extract-project-context]
+verify_jwt = false
+
+[functions.google-drive-auth]
+verify_jwt = false
+
+[functions.notion-auth]
+verify_jwt = false
+
+[functions.figma-auth]
+verify_jwt = false
+
+[functions.manage-figma-token]
+verify_jwt = false
+
+[functions.delete-account]
+verify_jwt = false
+
+[functions.send-contact]
+verify_jwt = false
+
+[functions.generate-feedback-response]
+verify_jwt = false
+
+[functions.crawl-request]
+verify_jwt = false
+
+[functions.crawl-config]
+verify_jwt = false
+
+[functions.analyze-crawl]
+verify_jwt = false
+
+[functions.plugin-analyze]
+verify_jwt = false
+
+[functions.plugin-prototype-analyze]
+verify_jwt = false
+
+[functions.plugin-create-project]
+verify_jwt = false
+
+[functions.plugin-projects]
+verify_jwt = false
+
+[functions.plugin-audits]
+verify_jwt = false
+
+[functions.plugin-audit]
+verify_jwt = false
+
+[functions.plugin-upload-image]
+verify_jwt = false
+
+[functions.plugin-issue-feedback]
+verify_jwt = false
+
+[functions.promote-plugin-audit]
+verify_jwt = false
+
+[functions.manage-plugin-token]
+verify_jwt = false
+
+[functions.figma-prototype-crawl]
+verify_jwt = false
+
+[functions.storage-cleanup]
+verify_jwt = false
+
+[functions.plugin-byok-status]
+verify_jwt = false
+
+[auth.email.template.confirmation]
+subject = "Confirm your Qualia account"
+content_path = "./supabase/templates/confirmation.html"
+
+[auth.email.template.recovery]
+subject = "Reset your Qualia password"
+content_path = "./supabase/templates/recovery.html"
