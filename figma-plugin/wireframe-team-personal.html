@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Plugin Team/Personal — Wireframe Options</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #f1f5f9;
+    padding: 32px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .column { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+  .label { font-size: 13px; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.05em; }
+  .sublabel { font-size: 11px; color: #94a3b8; text-align: center; max-width: 320px; line-height: 1.5; }
+
+  .plugin { width: 320px; border: 1px solid #d1d5db; border-radius: 8px; background: #fff; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.10); }
+  .plugin-inner { padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+
+  .back-row { display: flex; align-items: center; gap: 8px; margin-bottom: 2px; }
+  .back-btn { font-size: 11px; color: #7c3aed; background: none; border: none; cursor: pointer; padding: 0; }
+  .mode-label { font-size: 11px; color: #71717a; }
+  h2.view-title { font-size: 14px; font-weight: 600; color: #18181b; }
+
+  .section-card { background: #f5f3ff; border: 1px solid #c4b5fd; border-radius: 6px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+  .neutral-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+  .section-title { font-size: 12px; font-weight: 600; color: #334155; }
+  .field-label { font-size: 11px; font-weight: 600; color: #666; display: block; }
+  select, input[type="text"] { width: 100%; padding: 7px 8px; border-radius: 6px; border: 1px solid #e5e5e5; font-size: 12px; color: #18181b; background: #fff; }
+  .or-divider { font-size: 11px; font-weight: 600; color: #64748b; text-align: center; letter-spacing: 0.05em; }
+  .qualia-link-block { background: #f5f3ff; border: 1px solid #c4b5fd; border-radius: 6px; padding: 10px 12px; display: flex; flex-direction: column; gap: 3px; }
+  .qualia-link { color: #5b21b6; font-weight: 600; font-size: 12px; text-decoration: underline; cursor: pointer; }
+  .qualia-hint { font-size: 10px; color: #7c6fad; line-height: 1.4; }
+  .goal-card { background: #f5f3ff; border: 1px solid #c4b5fd; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 6px; }
+  .goal-label { font-size: 13px; font-weight: 600; color: #334155; }
+  .frame-card { background: #f5f3ff; border: 1px solid #c4b5fd; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+  .frame-title { font-size: 13px; font-weight: 600; color: #334155; }
+  .analyze-btn { padding: 10px 16px; background: #7c3aed; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 13px; width: 100%; }
+
+  /* Option B toggle */
+  .scope-toggle { display: flex; border: 1px solid #c4b5fd; border-radius: 6px; overflow: hidden; }
+  .scope-tab { flex: 1; padding: 6px 0; font-size: 12px; font-weight: 600; text-align: center; cursor: pointer; border: none; }
+  .scope-tab.active { background: #7c3aed; color: #fff; }
+  .scope-tab.inactive { background: transparent; color: #7c3aed; }
+
+  /* Option C stacked */
+  .stacked-header { font-size: 10px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; }
+  .radio-option { display: flex; align-items: center; gap: 6px; padding: 6px 8px; border-radius: 5px; border: 1px solid #e5e7eb; background: #fafafa; font-size: 12px; cursor: pointer; }
+  .radio-option.selected { border-color: #a78bfa; background: #f5f3ff; }
+  .radio-option input { accent-color: #7c3aed; }
+
+  .strikethrough { text-decoration: line-through; opacity: 0.35; }
+</style>
+</head>
+<body>
+
+<!-- CURRENT -->
+<div class="column">
+  <div class="label">Current</div>
+  <div class="sublabel">For reference — inline create still present</div>
+  <div class="plugin"><div class="plugin-inner">
+    <div class="back-row"><button class="back-btn">← Back</button><span class="mode-label">Single screen</span></div>
+    <h2 class="view-title">Choose a project</h2>
+
+    <div class="section-card">
+      <span class="section-title">Use existing project</span>
+      <label class="field-label">Project</label>
+      <select>
+        <option>Select a project</option>
+        <option>My App</option>
+        <option>Dashboard Redesign</option>
+        <option>Acme Corp — Onboarding</option>
+        <option>Acme Corp — Checkout</option>
+      </select>
+    </div>
+
+    <div class="or-divider">— or —</div>
+
+    <div class="neutral-card">
+      <span class="section-title">Create new project</span>
+      <label class="field-label">Product name</label>
+      <input type="text" placeholder="e.g. My App" />
+      <button style="align-self:flex-start;padding:7px 12px;font-size:12px;background:#7c3aed;color:#fff;border:none;border-radius:6px;cursor:pointer;">Create project</button>
+    </div>
+
+    <div class="or-divider">— or —</div>
+
+    <div class="qualia-link-block">
+      <a class="qualia-link">Create or edit project in Qualia →</a>
+    </div>
+
+    <div class="goal-card">
+      <span class="goal-label">Screen goal (optional)</span>
+      <input type="text" placeholder="e.g. Complete checkout" />
+    </div>
+    <div class="frame-card">
+      <span class="frame-title">1 frame selected</span>
+      <button class="analyze-btn">Analyze screen</button>
+    </div>
+  </div></div>
+</div>
+
+
+<!-- OPTION A — optgroup, no inline create -->
+<div class="column">
+  <div class="label">Option A — optgroup</div>
+  <div class="sublabel">Grouped dropdown. No inline create. Qualia link handles everything.</div>
+  <div class="plugin"><div class="plugin-inner">
+    <div class="back-row"><button class="back-btn">← Back</button><span class="mode-label">Single screen</span></div>
+    <h2 class="view-title">Choose a project</h2>
+
+    <div class="section-card">
+      <label class="field-label">Project</label>
+      <select>
+        <option value="">Select a project</option>
+        <optgroup label="Personal">
+          <option>My App</option>
+          <option>Dashboard Redesign</option>
+        </optgroup>
+        <optgroup label="Team — Acme Corp">
+          <option>Onboarding</option>
+          <option>Checkout</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <div class="qualia-link-block">
+      <a class="qualia-link">Create or manage projects in Qualia →</a>
+      <span class="qualia-hint">Set up mission, personas and constraints for better audits.</span>
+    </div>
+
+    <div class="goal-card">
+      <span class="goal-label">Screen goal (optional)</span>
+      <input type="text" placeholder="e.g. Complete checkout" />
+    </div>
+    <div class="frame-card">
+      <span class="frame-title">1 frame selected</span>
+      <button class="analyze-btn">Analyze screen</button>
+    </div>
+  </div></div>
+</div>
+
+
+<!-- OPTION B — toggle, no inline create -->
+<div class="column">
+  <div class="label">Option B — Toggle</div>
+  <div class="sublabel">Personal / Team tabs filter the list. Team tab shown.</div>
+  <div class="plugin"><div class="plugin-inner">
+    <div class="back-row"><button class="back-btn">← Back</button><span class="mode-label">Single screen</span></div>
+    <h2 class="view-title">Choose a project</h2>
+
+    <div class="section-card">
+      <div class="scope-toggle">
+        <button class="scope-tab inactive">Personal</button>
+        <button class="scope-tab active">Team</button>
+      </div>
+      <label class="field-label">Project</label>
+      <select>
+        <option>Select a project</option>
+        <option>Onboarding</option>
+        <option>Checkout</option>
+      </select>
+    </div>
+
+    <div class="qualia-link-block">
+      <a class="qualia-link">Create or manage projects in Qualia →</a>
+      <span class="qualia-hint">Set up mission, personas and constraints for better audits.</span>
+    </div>
+
+    <div class="goal-card">
+      <span class="goal-label">Screen goal (optional)</span>
+      <input type="text" placeholder="e.g. Complete checkout" />
+    </div>
+    <div class="frame-card">
+      <span class="frame-title">1 frame selected</span>
+      <button class="analyze-btn">Analyze screen</button>
+    </div>
+  </div></div>
+</div>
+
+
+<!-- OPTION C — stacked, no inline create -->
+<div class="column">
+  <div class="label">Option C — Stacked</div>
+  <div class="sublabel">Both groups always visible as labelled radio lists.</div>
+  <div class="plugin"><div class="plugin-inner">
+    <div class="back-row"><button class="back-btn">← Back</button><span class="mode-label">Single screen</span></div>
+    <h2 class="view-title">Choose a project</h2>
+
+    <div class="section-card">
+      <span class="stacked-header">Personal</span>
+      <div class="radio-option selected"><input type="radio" name="proj_c" checked /> My App</div>
+      <div class="radio-option"><input type="radio" name="proj_c" /> Dashboard Redesign</div>
+
+      <span class="stacked-header" style="margin-top:4px;">Team — Acme Corp</span>
+      <div class="radio-option"><input type="radio" name="proj_c" /> Onboarding</div>
+      <div class="radio-option"><input type="radio" name="proj_c" /> Checkout</div>
+    </div>
+
+    <div class="qualia-link-block">
+      <a class="qualia-link">Create or manage projects in Qualia →</a>
+      <span class="qualia-hint">Set up mission, personas and constraints for better audits.</span>
+    </div>
+
+    <div class="goal-card">
+      <span class="goal-label">Screen goal (optional)</span>
+      <input type="text" placeholder="e.g. Complete checkout" />
+    </div>
+    <div class="frame-card">
+      <span class="frame-title">1 frame selected</span>
+      <button class="analyze-btn">Analyze screen</button>
+    </div>
+  </div></div>
+</div>
+
+</body>
+</html>

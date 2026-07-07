@@ -1,0 +1,19 @@
+{
+  "name": "fixtures",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "devDependencies": {
+    "eslint": "^9",
+    "@typescript-eslint/parser": "^8",
+    "@typescript-eslint/eslint-plugin": "^8",
+    "typescript-eslint": "^8",
+    "eslint-plugin-jsx-a11y": "^6",
+    "eslint-plugin-react": "^7",
+    "eslint-plugin-react-hooks": "^5",
+    "eslint-plugin-import": "^2",
+    "eslint-plugin-tailwindcss": "^3",
+    "eslint-plugin-no-only-tests": "^3",
+    "tailwindcss": "^3"
+  }
+}

@@ -1,0 +1,71 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Generated logo export
+qualia-logo.jpg
+
+# Stale package manager lock files (project uses npm only)
+bun.lock
+bun.lockb
+deno.lock
+
+# Lovable legacy
+.lovable/
+
+# Editor debug logs
+.cursor/debug*.log
+
+# Playwright
+e2e/.auth/
+playwright-report/
+test-results/
+.env.e2e
+.vercel
+.worktrees/
+.claude/worktrees/
+
+# Analytics reports (generated output)
+docs/analytics/*.md
+
+# Environment secrets
+.env
+
+# Claude / Superpowers generated artifacts
+.superpowers/
+docs/superpowers/brainstorm/
+
+# Local QA outputs (audit reports, screenshots, regression artifacts)
+tmp-qa/
+
+# Supabase CLI state
+supabase/.temp/
+
+# Operator-emails local override (analytics queries — see docs/analytics/queries/README.md)
+docs/analytics/queries/_operator_emails.local.sql
+
+# NOTE: docs/research/ and docs/contacts/ are intentionally tracked in this
+# PRIVATE repo (for GitHub-backed backup) but EXCLUDED from the public
+# squash. See .squash-exclude for the public-mirror exclusion list.
+.playwright-mcp/

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Read the README first
+    url: https://github.com/Soba-noodl/qualia-mvp#readme
+    about: This project is a snapshot artifact (MIT-licensed). It is no longer actively maintained. PRs and issues are not actively reviewed — please fork before opening anything.
+  - name: Setting up a fork
+    url: https://github.com/Soba-noodl/qualia-mvp/blob/main/README.md#fork-specific-edits
+    about: See "Fork-specific edits" in the README + e2e/fixtures/README.md + docs/analytics/queries/README.md for opt-in setup pointers.

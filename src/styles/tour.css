@@ -1,0 +1,121 @@
+/* Custom styles for driver.js tour popover */
+.qualia-tour-popover {
+  background: hsl(var(--card)) !important;
+  color: hsl(var(--card-foreground)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  border-radius: 12px !important;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(8px);
+}
+
+.qualia-tour-popover .driver-popover-title {
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+  color: hsl(var(--foreground)) !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.qualia-tour-popover .driver-popover-description {
+  font-size: 0.875rem !important;
+  color: hsl(var(--muted-foreground)) !important;
+  line-height: 1.6 !important;
+}
+
+.qualia-tour-popover .driver-popover-progress-text {
+  font-size: 0.75rem !important;
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+.qualia-tour-popover .driver-popover-navigation-btns {
+  gap: 0.5rem !important;
+}
+
+/* Base button styles - remove ALL potential ghosting artifacts */
+.qualia-tour-popover .driver-popover-prev-btn,
+.qualia-tour-popover .driver-popover-next-btn {
+  padding: 0.5rem 1rem !important;
+  border-radius: 8px !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  transition: opacity 0.15s ease !important;
+  /* Remove all potential ghosting effects */
+  box-shadow: none !important;
+  text-shadow: none !important;
+  outline: none !important;
+  border: none !important;
+  position: relative !important;
+  transform: none !important;
+}
+
+/* Remove any pseudo-elements that could cause ghosting */
+.qualia-tour-popover .driver-popover-prev-btn::before,
+.qualia-tour-popover .driver-popover-prev-btn::after,
+.qualia-tour-popover .driver-popover-next-btn::before,
+.qualia-tour-popover .driver-popover-next-btn::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Back/Previous button - ghost style */
+.qualia-tour-popover .driver-popover-prev-btn {
+  background: transparent !important;
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+.qualia-tour-popover .driver-popover-prev-btn:hover {
+  background: transparent !important;
+  color: hsl(var(--foreground)) !important;
+  opacity: 1 !important;
+}
+
+.qualia-tour-popover .driver-popover-prev-btn:focus,
+.qualia-tour-popover .driver-popover-prev-btn:active {
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Next/Done button - primary style */
+.qualia-tour-popover .driver-popover-next-btn {
+  background: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+}
+
+.qualia-tour-popover .driver-popover-next-btn:hover {
+  opacity: 0.9 !important;
+  background: hsl(var(--primary)) !important;
+}
+
+.qualia-tour-popover .driver-popover-next-btn:focus,
+.qualia-tour-popover .driver-popover-next-btn:active {
+  background: hsl(var(--primary)) !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Close button */
+.qualia-tour-popover .driver-popover-close-btn {
+  color: hsl(var(--muted-foreground)) !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+.qualia-tour-popover .driver-popover-close-btn:hover {
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Arrow styling */
+.qualia-tour-popover .driver-popover-arrow-side-left,
+.qualia-tour-popover .driver-popover-arrow-side-right,
+.qualia-tour-popover .driver-popover-arrow-side-top,
+.qualia-tour-popover .driver-popover-arrow-side-bottom {
+  border-color: hsl(var(--border)) !important;
+}
+
+/* Highlighted element styling */
+.driver-active-element {
+  outline: 2px solid hsl(var(--primary)) !important;
+  outline-offset: 4px !important;
+}
